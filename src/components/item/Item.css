@@ -1,0 +1,57 @@
+.item {
+    box-shadow: 1px 1px 5px var(--softer-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .item__img {
+    width: 30%;
+  }
+  .item p {
+    color: purple;
+  }
+  .item h4,
+  p {
+    margin: 0.5rem auto;
+  }
+  .item h2 {
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
+  .item:hover {
+    box-shadow: 0px 0px 10px black;
+    transform: scale(1.01);
+  }
+  .item-price-add {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .add-item-btn,
+  .remove-item-btn {
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    display: block;
+    font-size: 1rem;
+    background-color: var(--color-white);
+    color: black;
+    border: 2px solid gold;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  .remove-item-btn {
+    border-color: var(--color-danger);
+    color: var(--color-danger);
+  }
+  .add-item-btn:hover {
+    background-color: green;
+    color: var(--color-white);
+  }
+  .remove-item-btn:hover {
+    background-color: var(--color-danger);
+    color: var(--color-white);
+  }
