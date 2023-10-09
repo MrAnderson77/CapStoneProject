@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import {Routes, Route} from "react-router-dom";
+import Login from "./pages/Login/login";
+import Authenticated from "./pages/Authenticated/authenticated"
 import Header from "./components/header/Header";
 import AddProducts from "./components/addproducts/AddProducts";
 import ItemBody from "./components/item/ItemBody";
@@ -69,6 +72,12 @@ const App = () => {
           removeItem={removeItem}
           addedItems={addedItems}
         />
+    <div>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/authenticated" element={<Authenticated />} />
+      </Routes>
+    </div>
       </div>
     </div>
   );
