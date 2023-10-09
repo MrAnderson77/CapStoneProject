@@ -16,6 +16,7 @@ const App = () => {
   const [addedItems, setAddedItem] = useState([]);
   const [showAddProducts, setShowAddProducts] = useState(false);
   const [cart, setCart] = useState([]);
+  const [token, setToken] = useState(localStorage.getItem('token'))
   console.log(cart);
   
 
@@ -74,7 +75,7 @@ const App = () => {
         />
     <div>
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element=  {<Login token={token} setToken={setToken} />} />
         <Route path="/authenticated" element={<Authenticated />} />
       </Routes>
     </div>

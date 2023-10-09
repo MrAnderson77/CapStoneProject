@@ -5,15 +5,13 @@ function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
-  const [token, setToken] = useState(localStorage.getItem('token'))
+
 
   const navigate = useNavigate()
   async function submitForm(e) {
     e.preventDefault()
-    if (password.length < 8) {
-      setErrorMessage("Password is too short");
-    } else {
-      const response = await fetch('https://fsa-jwt-practice.herokuapp.com/signup', 
+   
+      const response = await fetch('https://fakestoreapi.com/Auth/Login', 
       { 
         method: "POST", 
         headers: { 
@@ -24,12 +22,11 @@ function Login() {
           password 
         }) 
       })
-      setEmail(''); // resets the state value
-      setPassword('');
+    
       const { token } = await response.json()
+      console.log(token)
       localStorage.setItem('token', token);
       navigate('/authenticated')
-    }
   }
 
 
@@ -40,7 +37,7 @@ function Login() {
         <label htmlFor="email">Email</label>
         <input
           value={email} // controls the input value
-          type="email"
+      
           id="email"
           onChange={(e) => {
             setErrorMessage('');
